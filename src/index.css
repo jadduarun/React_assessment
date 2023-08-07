@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: thistle;
+}
+.App{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px;
+}
+h1{
+    margin-top: 30px;
+}
+fieldset{
+    padding-left: 20px;
+}
+.box{
+    margin-top: 20px;
+}
+.label{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.inputBox{
+    margin-top: 10px;
+    padding: 5px;
+    margin-left: 60px;
+    width: 250px;
+}
+.button{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px;
+    width: 100px;
+    margin-left: 140px;
+    border-radius: 10px;
+    border: none;
+}
