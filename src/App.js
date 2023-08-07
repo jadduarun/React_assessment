@@ -18,10 +18,9 @@ function App() {
     setInitialvalues([...initialvalues, { id: id, title: data }]);
     setId(id + 1);
   }
-  function onDelete(id) {
-    setInitialvalues((data) => {
-      data.filter((todo) => todo.id !== id);
-    });
+  function onDelete(data) {
+    const deleteList = initialvalues.filter((todo)=> todo.id!== data.id);
+    setInitialvalues(deleteList);
   }
   function onEdit(todo) {
     const newTodo = todo ? [...todo] :todo;
@@ -52,11 +51,9 @@ function App() {
             <form onSubmit={handleSubmit}>
               <label className="label">Title:</label>
               <input
-                type="text"
                 className="inputBox"
-                name="title"
                 value={data}
-                onChange={(e) => setData(e.target.value)}
+                onChange={e => setData(e.target.value)}
               />
               <input type="submit" className="button" value="Add" />
             </form>
@@ -73,7 +70,7 @@ function App() {
               {isEditing && <input value={editItem.title} onChange={onEditItem} />}
               {!isEditing && <button onClick={() => onEdit(todo)}>Edit</button>}
               {isEditing && <button onClick={() => onDoneEdit()}>Done</button>}
-              <button onClick={() => onDelete(todo.id)}>Delete</button>
+              <button onClick={() => onDelete(todo)}>Delete</button>
             </li>
           );
         })
