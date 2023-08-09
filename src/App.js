@@ -10,10 +10,13 @@ function App() {
   const [content, setContent] = useState("");
 
   function handleSubmit() {
-    if (data.trim() === "" || content.trim() === "") {
-      alert("Please Enter the Fields");
+    if (data.trim() === "") {
+      alert("Please Enter the Title");
     }
-    if (data.trim() !== "" || content.trim() !== "") {
+    else if (content.trim() === "") {
+      alert("Please Enter the Description");
+    }
+    if (data.trim() !== "" && content.trim() !== "") {
       setInitialvalues([...initialvalues, { title: data,description: content }]);
     }
     setData("")
@@ -28,10 +31,13 @@ function App() {
   }
 
   function onDone() {
-    if (data.trim() === "" || content.trim() === "") {
-      alert("Please Enter the Fields");
+    if (data.trim() === "") {
+      alert("Please Enter the Title");
     }
-    if (data.trim() !== "") {
+    else if (content.trim() === "") {
+      alert("Please Enter the Description");
+    }
+    if (data.trim() !== "" && content.trim() !== "") {
       const newArr = [...initialvalues];
       newArr[editIndex] = { title: data ,description:content};
       setInitialvalues(newArr);
